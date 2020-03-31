@@ -41,7 +41,7 @@ spec:
           git(url:'https://github.com/cloudbees-guru/sonatype-cloudbees-petclinic', credentialsId: 'github-cloudbees-guru')
           container('maven') {
             withMaven(
-                      mavenSettingsConfig: '8b13860a-f881-47c0-81bf-4192e70fc34d') {
+                      mavenSettingsConfig: '4123d3ce-22c2-477d-83d7-623049473250') {
               sh 'mvn clean verify'
             }
           }
@@ -51,7 +51,7 @@ spec:
       steps {
           container('maven') {
             withMaven(
-                      mavenSettingsConfig: '8b13860a-f881-47c0-81bf-4192e70fc34d') {
+                      mavenSettingsConfig: '4123d3ce-22c2-477d-83d7-623049473250') {
               sh 'mvn sonar:sonar -Dsonar.login=${SONAR_TOKEN}'
             }
           }
