@@ -57,6 +57,11 @@ spec:
           }
       }
     }
+    stage('Nexus Lifecycle Evaluation') {
+      steps {
+        nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: 'PetClinic', iqStage: 'build'
+      }
+    }
     stage('Publish to Nexus') {
       steps {
           container('maven') {
